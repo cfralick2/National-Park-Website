@@ -7,19 +7,22 @@
 <table>
     @foreach (var park in Model)
     {
-        <tr>
+        <tr class=" LinkTo">
             <td>
-                <a asp-controller="Home" asp-action="Details" asp-route-parkCode="@park.ParkCode" method="get">@park.ParkName</a>
+                <a class="linkTo" Home" asp-action="Details" asp-route-parkCode="@park.ParkCode" method="get">@park.ParkName</a>
             </td>
         </tr>
-        <tr>
+        <tr class="picAndDescription">
             <td>
                 <a asp-controller="Home" asp-action="Details" asp-route-parkCode="@park.ParkCode" method="get"><img src="~/images/@(park.ParkCode.ToLower() + ".jpg")" /></a>
+
+            </td>
+            <td class="description">
+                <p>@park.ParkDescription</p>
             </td>
         </tr>
         <tr>
             <td>
-                <p>@park.ParkDescription</p>
             </td>
         </tr>
 
