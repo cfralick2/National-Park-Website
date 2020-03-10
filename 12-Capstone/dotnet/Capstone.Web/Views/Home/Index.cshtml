@@ -1,4 +1,29 @@
-﻿@{
+﻿@model IList<Park>
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<h2>National Parks</h2>
+<table>
+    @foreach (var park in Model)
+    {
+        <tr>
+            <td>
+                <a asp-controller="Home" asp-action="Details" asp-route-parkCode="@park.ParkCode" method="get">@park.ParkName</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a asp-controller="Home" asp-action="Details" asp-route-parkCode="@park.ParkCode" method="get"><img src="~/images/@(park.ParkCode.ToLower() + ".jpg")" /></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>@park.ParkDescription</p>
+            </td>
+        </tr>
+
+
+    }
+
+</table>
