@@ -2,31 +2,36 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<body>
+    <div class="divBox">
+        <div class="divText">
+            <p>National Parks</p>
+        </div>
+    </div>
+    <table>
+        @foreach (var park in Model)
+        {
+            <tr class=" LinkTo">
+                <td>
+                    <a class="linkTo" Home" asp-action="Details" asp-route-parkCode="@park.ParkCode" method="get">@park.ParkName</a>
+                </td>
+            </tr>
+            <tr class="picAndDescription">
+                <td>
+                    <a asp-controller="Home" asp-action="Details" asp-route-parkCode="@park.ParkCode" method="get"><img src="~/images/@(park.ParkCode.ToLower() + ".jpg")" /></a>
 
-<h2>National Parks</h2>
-<table>
-    @foreach (var park in Model)
-    {
-        <tr class=" LinkTo">
-            <td>
-                <a class="linkTo" Home" asp-action="Details" asp-route-parkCode="@park.ParkCode" method="get">@park.ParkName</a>
-            </td>
-        </tr>
-        <tr class="picAndDescription">
-            <td>
-                <a asp-controller="Home" asp-action="Details" asp-route-parkCode="@park.ParkCode" method="get"><img src="~/images/@(park.ParkCode.ToLower() + ".jpg")" /></a>
-
-            </td>
-            <td class="description">
-                <p>@park.ParkDescription</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            </td>
-        </tr>
+                </td>
+                <td class="description">
+                    <p>@park.ParkDescription</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+            </tr>
 
 
-    }
+        }
 
-</table>
+    </table>
+</body>

@@ -3,55 +3,67 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Park Details</h2>
+    <link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet'>
 
-<img src="~/images/@(Model.ParkCode.ToLower() + ".jpg")" />
+    <style>
+        .quote {
+            font-family: 'Parisienne';
+        }
+    </style>
+
+<div class="divBox">
+    <div class="divText">
+        <p>Park Details</p>
+    </div>
+</div>
+
+<img id="detailImage" src="~/images/@(Model.ParkCode.ToLower() + ".jpg")" />
 <br />
 
-<table>
+<div>
 
-    <tr>
-        <td>
-            @(Model.ParkName + " (" + Model.ParkCode + ") - " + Model.State)
 
-        </td>
+    <div class="nameState">
+        <p> @(Model.ParkName + " (" + Model.ParkCode + ") - " + Model.State)</p>
+    </div>
 
-    </tr>
-    <tr>
-        <td>
-            @("Est. " + Model.YearFounded)
-            @(Model.AnnualVisitorCount + " Annual Visitors")
-            @(Model.NumberOfAnimalSpecies + " Known Species" )
-            @("Climate: " + Model.Climate)
-        </td>
 
-    </tr>
-    <tr>
-        <td>
+    <div class="visitors">
+        <ul>
+            <li>@("Est. " + Model.YearFounded)</li>
+            <li>@(Model.AnnualVisitorCount + " Annual Visitors")</li>
+            <li>@(Model.NumberOfAnimalSpecies + " Known Species")</li>
+            <li>@("Climate: " + Model.Climate)</li>
+        </ul>
+
+    </div>
+    <div class="nameState">
+        <p>
             @Model.ParkDescription
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @(Model.Acreage + " Acres")
-            @("Elevation: " + Model.ElevationInFeet + "ft")
-            @(Model.NumberOfCampsites + " Campsites")
-            @(Model.MilesOfTrail + " Miles of Trails")
-        </td>
+        </p>
+    </div>
 
-    </tr>
-    <tr>
-        <td>
-           @("\"" + Model.InspirationalQuote+ "\"")
-           @("- " + Model.InspirationalQuoteSource)
-        </td>
+    <div class="visitors">
+        <ul>
+            <li>@(Model.Acreage + " Acres")</li>
+            <li>@("Elevation: " + Model.ElevationInFeet + "ft")</li>
+            <li>@(Model.NumberOfCampsites + " Campsites")</li>
+            <li>@(Model.MilesOfTrail + " Miles of Trails")</li>
+        </ul>
 
-    </tr>
-    <tr>
-        <td>
+    </div>
+    <div class="quote">
+        <p>
+            @("\"" + Model.InspirationalQuote + "\"")
+            @("- " + Model.InspirationalQuoteSource)
+        </p>
+
+    </div>
+    <div class="nameState">
+        <p>
             @("Entry Fee: $" + Model.EntryFee)
-        </td>
+        </p>
 
-    </tr>
+    </div>
 
-</table>
+</div>
