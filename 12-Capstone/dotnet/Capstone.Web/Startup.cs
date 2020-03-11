@@ -37,7 +37,8 @@ namespace Capstone.Web
             string connectionString = Configuration.GetConnectionString("Default");
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IParkDAO>(db => new ParkSqlDAO(connectionString));
-            //need to set up Survey DB************************************************************************************************************************
+            services.AddScoped<ISurveyDAO>(db => new SurveySqlDAO(connectionString));
+            
 
         }
 

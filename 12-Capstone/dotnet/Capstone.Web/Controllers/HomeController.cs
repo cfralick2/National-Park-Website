@@ -26,6 +26,7 @@ namespace Capstone.Web.Controllers
         public IActionResult Details(string parkCode)
         {
             var park = parkDAO.GetParkDetails(parkCode);
+            park.AddFiveDayForecast(parkDAO.FiveDayForecast(parkCode));
             return View(park);
         }
         public IActionResult Contact()

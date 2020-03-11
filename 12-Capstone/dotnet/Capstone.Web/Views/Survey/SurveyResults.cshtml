@@ -1,0 +1,29 @@
+﻿@model IList<SurveyResultsModel>
+@{
+    ViewData["Title"] = "SurveyResults";
+}
+
+<h2>Survey Results</h2>
+<h3>Thank you for submitting your survey!</h3>
+<div class="surveyResults">
+    @foreach (SurveyResultsModel survey in Model)
+    {
+        <p>
+            @survey.SurveyCount
+        </p>
+        <p>
+            @survey.ParkName
+        </p>
+        <p>
+            @survey.State
+        </p>
+        <p>
+            @survey.AnnualVisitorCount
+        </p>
+        <p>
+            @survey.ParkDescription
+        </p>
+
+    }
+</div> 
+

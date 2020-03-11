@@ -3,13 +3,13 @@
     ViewData["Title"] = "Details";
 }
 
-    <link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet'>
 
-    <style>
-        .quote {
-            font-family: 'Parisienne';
-        }
-    </style>
+<style>
+    .quote {
+        font-family: 'Parisienne';
+    }
+</style>
 
 <div class="divBox">
     <div class="divText">
@@ -65,5 +65,56 @@
         </p>
 
     </div>
+    <div class="forecast">
+        @foreach (Weather weather in Model.Forecast)
+        {
+            <p>
+                Day: @(weather.FiveDayForecastValue)
+            </p>
+            <p>
+                Daily Low: @(weather.LowTemp)
+            </p>
+            <p>
+                Daily High: @(weather.HighTemp)
+            </p>
+            <p>
+                Conditions: @(weather.Forecast)
+            </p>
+            <p>
+                @(weather.WeatherDict[weather.Forecast])
+            </p>
+            <p>
+                Conditions: @(weather.GetTempAdvice())
+            </p>
+        }
 
+    </div>
+    @*<div class="forecast">
+        @for (int i = 5; i > 0; i--)
+        {
+            if
+                (i == Model.FiveDayForecastValue)
+            {
+                <p>
+                    Day: @(Model.FiveDayForecastValue)
+                </p>
+                <p>
+                    Daily Low: @(Model.LowTemp)
+                </p>
+                <p>
+                    Daily High: @(Model.HighTemp)
+                </p>
+                <p>
+                    Conditions: @(Model.Forecast)
+                </p>
+                <p>
+                    @(Model.WeatherAdvice)
+                </p>
+            }
+            
+        }
+
+
+
+    </div>*@
 </div>

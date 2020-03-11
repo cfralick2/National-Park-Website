@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Capstone.Web.Models
 {
+
     public class Park
     {
         public string ParkCode { get; set; }
@@ -23,5 +24,19 @@ namespace Capstone.Web.Models
         public int EntryFee { get; set; }
         public int NumberOfAnimalSpecies { get; set; }
 
+        private List<Weather> weathers;
+        public IList<Weather> Forecast
+        {
+            get
+            {
+                return weathers;
+            }
+        }
+        public void AddFiveDayForecast(IList<Weather> weathers)
+        {
+            this.weathers = new List<Weather>(weathers);
+        }
     }
+
+
 }
