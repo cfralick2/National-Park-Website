@@ -9,6 +9,7 @@
     .quote {
         font-family: 'Parisienne';
     }
+  
 </style>
 
 <div class="divBox">
@@ -78,16 +79,17 @@
     <div class="forecast">
         @foreach (Weather weather in Model.Forecast)
         {
-        <p>
-            <img id="forecastImage" src="~/images/@(weather.Forecast.ToLower() + ".png")" />
-            @DateTime.Today.AddDays(weather.FiveDayForecastValue-1).DayOfWeek<br />
-            Daily Low: @(weather.DisplayLowTemp)°<br />
 
-            Daily High: @(weather.DisplayHighTemp)°<br />
-            Conditions: @(weather.Forecast)<br />
-            @(weather.WeatherDict[weather.Forecast])<br />
-            Conditions: @(weather.GetTempAdvice())<br />
-        </p>
+            
+            <p>
+                <img id="forecastImage" src="~/images/@(weather.Forecast.ToLower() + ".png")" /><br />
+                @DateTime.Today.AddDays(weather.FiveDayForecastValue - 1).DayOfWeek<br />
+                Daily Low: @(weather.DisplayLowTemp)°<br />
+                Daily High: @(weather.DisplayHighTemp)°<br />
+                Conditions: @(weather.Forecast)<br />
+                @(weather.WeatherDict[weather.Forecast])<br />
+                Conditions: @(weather.GetTempAdvice())<br />
+            </p>
         }
 
     </div>

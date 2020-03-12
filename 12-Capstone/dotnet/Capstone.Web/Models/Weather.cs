@@ -17,14 +17,16 @@ namespace Capstone.Web.Models
         {
             get
             {
+                
                 if (Farenheit)
                 {
-                    return LowTemp;
+                    return Math.Round(LowTemp);
                 }
                 else
                 {
-                    return (LowTemp - 32) * 1.8;
+                    return Math.Round((LowTemp - 32) * (5.0 / 9));
                 }
+                
             }
         }
        
@@ -34,11 +36,11 @@ namespace Capstone.Web.Models
             {
                 if (Farenheit)
                 {
-                    return HighTemp;
+                    return Math.Round(HighTemp);
                 }
                 else
                 {
-                    return (HighTemp - 32) * 1.8;
+                    return Math.Round((HighTemp - 32) * (5.0/9));
                 }
             }
         }

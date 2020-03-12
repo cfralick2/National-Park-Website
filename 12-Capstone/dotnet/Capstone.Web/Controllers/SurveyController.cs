@@ -32,7 +32,9 @@ namespace Capstone.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("Index");
+                IList<Park> parkNames = surveyDAO.GetParkNames();
+                ViewData["parkNames"] = parkNames;
+                return View("Index",survey);
             }
             else
             {

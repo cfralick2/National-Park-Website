@@ -12,7 +12,7 @@ namespace Capstone.Web.Models
         public int SurveyId { get; set; }
         [Required]
         public string ParkCode { get; set; }
-        [Required, EmailAddress(ErrorMessage ="Email Address is Required.")]
+        [Required(ErrorMessage ="Email Address is Required."), EmailAddress]
         public string EmailAddress { get; set; }
         [Required]
         public string State { get; set; }

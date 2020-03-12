@@ -8,8 +8,9 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 h3 {
-    color:floralwhite;
+    color: floralwhite;
     text-align: center;
 }
 
@@ -72,7 +73,7 @@ h3 {
     .nameState p {
         color: floralwhite;
         font-size: 20px;
-        background-color: hsla(120, 100%, 25%, 0.3);
+        background-color: hsla(120, 100%, 25%, 0.4);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
@@ -91,24 +92,25 @@ ul {
     justify-content: space-between;
     color: floralwhite;
     font-size: 20px;
-    background-color: hsla(120, 100%, 25%, 0.3);
+    background-color: hsla(120, 100%, 25%, 0.4);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 label {
-    color:floralwhite;
+    color: floralwhite;
 }
 
 footer {
     color: floralwhite;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 .address {
     color: floralwhite;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     background-color: hsla(120, 100%, 25%, 0.3);
-    border:solid black;
+    border: solid black;
 }
 
 .surveyResults p {
@@ -121,42 +123,51 @@ footer {
     padding-left: 5px;
 }
 
-a{
-    color:floralwhite;
-    text-decoration:none;
+a {
+    color: floralwhite;
+    text-decoration: none;
+}
+.forecast {
+    margin:2px;
 }
 .forecast p {
-    color:black;
+    color: black;
     font-size: 15px;
     display: table-cell;
-    background-color: hsla(180,100%,50%,0.6);
     padding: 5px;
-    border: aqua solid;
+    border: cadetblue solid;
     border-radius: 10px;
-    margin-right:2px;
-    margin-left:2px;
+    background-color:white;
+
 }
+
 #fav {
     padding-right: 10px;
     padding-top: 10px;
 }
+
 #email {
     padding-right: 66px;
 }
+
 #state {
     padding-right: 125px;
 }
+
 #activity {
     padding-right: 24px;
 }
+
 #forecastImage {
-    width: 15%;
+    width: 25%;
 }
+
 @media only screen and (max-width: 900px) {
     .picAndDescription {
         display: grid;
-        justify-items:center;
+        justify-items: center;
     }
+
     .forecast p {
         display: grid;
         justify-items: center;
