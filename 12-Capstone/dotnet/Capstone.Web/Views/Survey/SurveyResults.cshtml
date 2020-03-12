@@ -2,28 +2,28 @@
 @{
     ViewData["Title"] = "SurveyResults";
 }
+<div class="divBox">
+    <div class="divText">
+        <p>Survey Results</p>
+    </div>
+</div>
 
-<h2>Survey Results</h2>
 <h3>Thank you for submitting your survey!</h3>
 <div class="surveyResults">
     @foreach (SurveyResultsModel survey in Model)
     {
         <p>
-            @survey.SurveyCount
-        </p>
-        <p>
-            @survey.ParkName
-        </p>
-        <p>
-            @survey.State
-        </p>
-        <p>
-            @survey.AnnualVisitorCount
-        </p>
-        <p>
+            @survey.SurveyCount Vote(s)<br />
+
+            @survey.ParkName <br />
+
+            @survey.State <br />
+
+            @survey.AnnualVisitorCount Annual Visitors <br />
+
             @survey.ParkDescription
         </p>
 
     }
-</div> 
+</div>
 

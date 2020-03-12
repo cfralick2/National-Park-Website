@@ -2,36 +2,41 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h2>Survey</h2>
-
-<form asp-controller="Survey" asp-action="SaveNewSurvey" method="post">
-
-    <div>
-        <label asp-for="ParkCode">Favorite National Park</label>
-        <select asp-for="ParkCode" asp-items="Survey.ParkList"></select>
-        @*<span asp-validation-for="Username"></span>*@
+<body>
+    <div class="divBox">
+        <div class="divText">
+            <p>Survey</p>
+        </div>
     </div>
 
-    <div>
-        <label asp-for="EmailAddress"></label>
-        <input type="email" asp-for="EmailAddress" />
+    <form asp-controller="Survey" asp-action="SaveNewSurvey" method="post">
 
-    </div>
-    <div>
-        <label asp-for="State"></label>
-        <select asp-for="State" asp-items="Survey.StateList"></select>
+        <div>
+            <label id="fav" asp-for="ParkCode">Favorite National Park</label>
+            <select asp-for="ParkCode" asp-items="Survey.ParkList"></select>
+            @*<span asp-validation-for="Username"></span>*@
+        </div>
 
-    </div>
-    <div>
-        <label asp-for="ActivityLevel"></label>
-        <select asp-for="ActivityLevel" asp-items="Survey.ActivityLevelList"></select>
+        <div>
+            <label id="email" asp-for="EmailAddress"></label>
+            <input type="email" asp-for="EmailAddress" />
 
-    </div>
-    <div>
-        <label></label>
-        <input type="submit" value="Submit" />
-    </div>
+        </div>
+        <div>
+            <label id="state" asp-for="State"></label>
+            <select asp-for="State" asp-items="Survey.StateList"></select>
+
+        </div>
+        <div>
+            <label id="activity" asp-for="ActivityLevel">How active are you?</label>
+            <select asp-for="ActivityLevel" asp-items="Survey.ActivityLevelList"></select>
+
+        </div>
+        <div>
+            <label></label>
+            <input type="submit" value="Submit" />
+        </div>
 
 
-</form>
+    </form>
+</body>

@@ -8,6 +8,10 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+h3 {
+    color:floralwhite;
+    text-align: center;
+}
 
 .divBox {
     border: solid black;
@@ -90,7 +94,9 @@ ul {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-
+label {
+    color:floralwhite;
+}
 
 footer {
     color: floralwhite;
@@ -103,6 +109,17 @@ footer {
     background-color: hsla(120, 100%, 25%, 0.3);
     border:solid black;
 }
+
+.surveyResults p {
+    color: floralwhite;
+    font-size: 20px;
+    background-color: hsla(120, 100%, 25%, 0.3);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: solid black;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
 a{
     color:floralwhite;
     text-decoration:none;
@@ -110,4 +127,22 @@ a{
 .forecast p {
     color:floralwhite;
     font-size: 25px;
+}
+#fav {
+    padding-right: 10px;
+}
+#email {
+    padding-right: 66px;
+}
+#state {
+    padding-right: 125px;
+}
+#activity {
+    padding-right: 24px;
+}
+@media only screen and (max-width: 725px) {
+    .picAndDescription {
+        display: grid;
+        justify-items:center;
+    }
 }
