@@ -36,6 +36,7 @@ namespace Capstone.Web.Models
         {
             this.weathers = new List<Weather>(weathers);
         }
+       
     }
 
 

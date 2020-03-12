@@ -1,7 +1,13 @@
 ﻿@model Survey
 @{
     ViewData["Title"] = "Index";
-}
+    List<Park>parkNames = (List<Park>)ViewData["ParkNames"];
+    List<SelectListItem> ParkNameList = new List<SelectListItem>();
+    foreach(Park park in parkNames)
+    {
+    ParkNameList.Add(new SelectListItem() {Text = park.ParkName, Value = park.ParkCode});
+    }
+ }
 <body>
     <div class="divBox">
         <div class="divText">
@@ -13,23 +19,26 @@
 
         <div>
             <label id="fav" asp-for="ParkCode">Favorite National Park</label>
-            <select asp-for="ParkCode" asp-items="Survey.ParkList"></select>
-            @*<span asp-validation-for="Username"></span>*@
+            <select asp-for="ParkCode" asp-items="ParkNameList"></select>
+            <span asp-validation-for="ParkCode"></span>
         </div>
 
         <div>
             <label id="email" asp-for="EmailAddress"></label>
             <input type="email" asp-for="EmailAddress" />
+            <span asp-validation-for="EmailAddress"></span>
 
         </div>
         <div>
             <label id="state" asp-for="State"></label>
             <select asp-for="State" asp-items="Survey.StateList"></select>
+            <span asp-validation-for="State"></span>
 
         </div>
         <div>
             <label id="activity" asp-for="ActivityLevel">How active are you?</label>
             <select asp-for="ActivityLevel" asp-items="Survey.ActivityLevelList"></select>
+            <span asp-validation-for="ActivityLevel"></span>
 
         </div>
         <div>

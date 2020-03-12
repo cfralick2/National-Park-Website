@@ -65,56 +65,33 @@
         </p>
 
     </div>
+
+    <div>
+        <form asp-controller="Home" asp-action="ChangeTemp">
+            <input type="hidden" name="parkCode" value="@Model.ParkCode" />
+            <input type="submit" value="Celsius/Farenheit" />
+            
+
+        </form>
+    </div>
+
     <div class="forecast">
         @foreach (Weather weather in Model.Forecast)
         {
-            <p>
-                Day: @(weather.FiveDayForecastValue)
-            </p>
-            <p>
-                Daily Low: @(weather.LowTemp)
-            </p>
-            <p>
-                Daily High: @(weather.HighTemp)
-            </p>
-            <p>
-                Conditions: @(weather.Forecast)
-            </p>
-            <p>
-                @(weather.WeatherDict[weather.Forecast])
-            </p>
-            <p>
-                Conditions: @(weather.GetTempAdvice())
-            </p>
+        <p>
+            <img id="forecastImage" src="~/images/@(weather.Forecast.ToLower() + ".png")" />
+            @DateTime.Today.AddDays(weather.FiveDayForecastValue-1).DayOfWeek<br />
+            Daily Low: @(weather.DisplayLowTemp)°<br />
+
+            Daily High: @(weather.DisplayHighTemp)°<br />
+            Conditions: @(weather.Forecast)<br />
+            @(weather.WeatherDict[weather.Forecast])<br />
+            Conditions: @(weather.GetTempAdvice())<br />
+        </p>
         }
 
     </div>
-    @*<div class="forecast">
-        @for (int i = 5; i > 0; i--)
-        {
-            if
-                (i == Model.FiveDayForecastValue)
-            {
-                <p>
-                    Day: @(Model.FiveDayForecastValue)
-                </p>
-                <p>
-                    Daily Low: @(Model.LowTemp)
-                </p>
-                <p>
-                    Daily High: @(Model.HighTemp)
-                </p>
-                <p>
-                    Conditions: @(Model.Forecast)
-                </p>
-                <p>
-                    @(Model.WeatherAdvice)
-                </p>
-            }
-            
-        }
 
 
 
-    </div>*@
 </div>

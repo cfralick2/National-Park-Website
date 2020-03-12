@@ -16,7 +16,7 @@ namespace Capstone.Web.DAL
         }
         public bool SaveNewSurvey(Survey survey)
         {
-             bool isSuccessful = true;
+             bool isSuccessful = false;
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -30,10 +30,14 @@ namespace Capstone.Web.DAL
                     cmd.Parameters.AddWithValue("@state", survey.State);
                     cmd.Parameters.AddWithValue("@activityLevel", survey.ActivityLevel);
 
-                    cmd.ExecuteNonQuery();
-
+                    int result = cmd.ExecuteNonQuery();
+                    if (result == 1)
+                    {
+                        isSuccessful = true;
+                    } 
+                    
                 }
-                return isSuccessful = true;
+                
 
             }
             catch (Exception)
@@ -41,6 +45,7 @@ namespace Capstone.Web.DAL
 
                 throw;
             }
+            return isSuccessful;
         }
 
         public IList<SurveyResultsModel> GetSurveys()
@@ -74,6 +79,34 @@ namespace Capstone.Web.DAL
             catch (Exception)
             {
 
+                throw;
+            }
+        }
+        public IList<Park> GetParkNames()
+        {
+            IList<Park> parks = new List<Park>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT parkCode, parkName FROM park", conn);
+                    var reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        var park = new Park()
+                        {
+                            ParkCode = Convert.ToString(reader["parkCode"]),
+                            ParkName = Convert.ToString(reader["parkName"]),
+                            
+                        };
+                        parks.Add(park);
+                    }
+                }
+                return parks;
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

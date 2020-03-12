@@ -8,35 +8,41 @@ namespace Capstone.Web.Models
     public class Weather
     {
         public int FiveDayForecastValue { get; set; }
-        public int LowTemp { get; set; }
-        public int HighTemp { get; set; }
+        public double LowTemp { get; set; }
+        public double HighTemp { get; set; }
         public string Forecast { get; set; }
         public string WeatherAdvice { get; set; }
         public bool Farenheit { get; set; }
-
-        //public string GetWeatherAdvice()
-        //{
-
-        //string weatherAdvice = "";
-        //if (Forecast == "rain")
-        //{
-        //    weatherAdvice = "Pack raingear and wear waterproof shoes.";
-        //}
-        //if (Forecast == "snow")
-        //{
-        //    weatherAdvice = "Pack snowshoes.";
-        //}
-        //if (Forecast == "thunderstorms")
-        //{
-        //    weatherAdvice = "Seek shelter. Avoid hiking on exposed ridges.";
-        //}
-        //if (Forecast == "sun")
-        //{
-        //    weatherAdvice = "Pack sunblock.";
-        //}
-        //return weatherAdvice;
-
-
+        public double DisplayLowTemp
+        {
+            get
+            {
+                if (Farenheit)
+                {
+                    return LowTemp;
+                }
+                else
+                {
+                    return (LowTemp - 32) * 1.8;
+                }
+            }
+        }
+       
+        public double DisplayHighTemp
+        {
+            get
+            {
+                if (Farenheit)
+                {
+                    return HighTemp;
+                }
+                else
+                {
+                    return (HighTemp - 32) * 1.8;
+                }
+            }
+        }
+        
         public Dictionary<string, string> WeatherDict = new Dictionary<string, string>()
             {
                 {"rain", "Pack raingear and wear waterproof shoes." },
@@ -46,10 +52,12 @@ namespace Capstone.Web.Models
                 {"partly cloudy","Is it partly cloudy, or partly sunny? " },
                 {"cloudy", "Watch out for Vampires, for they walk the land today. " }
             };
+
+
         public string GetTempAdvice()
         {
             string tempAdvice = "";
-      
+
             if (HighTemp > 75)
             {
                 tempAdvice = "Bring an extra gallon of water.";
@@ -68,6 +76,7 @@ namespace Capstone.Web.Models
             }
 
             return tempAdvice;
+
         }
     }
 }

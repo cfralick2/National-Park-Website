@@ -59,7 +59,10 @@ h3 {
     }
 
 #detailImage {
-    width: 100%
+    display: flex;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .nameState {
@@ -80,8 +83,6 @@ h3 {
     color: black;
     border: solid black;
     border-radius: 5px;
-   
-    
 }
 
 
@@ -125,11 +126,19 @@ a{
     text-decoration:none;
 }
 .forecast p {
-    color:floralwhite;
-    font-size: 25px;
+    color:black;
+    font-size: 15px;
+    display: table-cell;
+    background-color: hsla(180,100%,50%,0.6);
+    padding: 5px;
+    border: aqua solid;
+    border-radius: 10px;
+    margin-right:2px;
+    margin-left:2px;
 }
 #fav {
     padding-right: 10px;
+    padding-top: 10px;
 }
 #email {
     padding-right: 66px;
@@ -140,9 +149,16 @@ a{
 #activity {
     padding-right: 24px;
 }
-@media only screen and (max-width: 725px) {
+#forecastImage {
+    width: 15%;
+}
+@media only screen and (max-width: 900px) {
     .picAndDescription {
         display: grid;
         justify-items:center;
+    }
+    .forecast p {
+        display: grid;
+        justify-items: center;
     }
 }

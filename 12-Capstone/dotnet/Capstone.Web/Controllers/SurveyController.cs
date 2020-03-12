@@ -17,7 +17,9 @@ namespace Capstone.Web.Controllers
         }
         public IActionResult Index()
         {
-            
+            IList<Park> parkNames = surveyDAO.GetParkNames();
+            ViewData["parkNames"] = parkNames;
+
             return View();
         }
         public IActionResult SurveyResults()
@@ -25,15 +27,20 @@ namespace Capstone.Web.Controllers
             var survey = surveyDAO.GetSurveys();
             return View(survey);
         }
+        [HttpPost]
         public IActionResult SaveNewSurvey(Survey survey)
         {
             if (!ModelState.IsValid)
             {
-                return View("Index");
+                return RedirectToAction("Index");
             }
-            surveyDAO.SaveNewSurvey(survey);
+            else
+            {
+                surveyDAO.SaveNewSurvey(survey);
 
-            return RedirectToAction("SurveyResults");
+                return RedirectToAction("SurveyResults");
+            }
+            
         }
     }
 }
