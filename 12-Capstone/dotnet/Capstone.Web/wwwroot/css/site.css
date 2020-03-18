@@ -17,7 +17,7 @@ h3 {
 .divBox {
     border: solid black;
     border-radius: 5px;
-    background-color: hsla(120, 100%, 25%, 0.3);
+    background-color: hsla(120, 100%, 25%, 0.5);
 }
 
 .divText p {
@@ -49,7 +49,7 @@ h3 {
     padding-right: 10px;
     border: solid black;
     border-radius: 5px;
-    background-color: hsla(120, 100%, 25%, 0.3);
+    background-color: hsla(120, 100%, 25%, 0.5);
 }
 
     .description p {
@@ -73,7 +73,7 @@ h3 {
     .nameState p {
         color: floralwhite;
         font-size: 20px;
-        background-color: hsla(120, 100%, 25%, 0.4);
+        background-color: hsla(120, 100%, 25%, 0.5);
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
@@ -92,7 +92,7 @@ ul {
     justify-content: space-between;
     color: floralwhite;
     font-size: 20px;
-    background-color: hsla(120, 100%, 25%, 0.4);
+    background-color: hsla(120, 100%, 25%, 0.5);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -109,14 +109,14 @@ footer {
     color: floralwhite;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
-    background-color: hsla(120, 100%, 25%, 0.3);
+    background-color: hsla(120, 100%, 25%, 0.5);
     border: solid black;
 }
 
 .surveyResults p {
     color: floralwhite;
     font-size: 20px;
-    background-color: hsla(120, 100%, 25%, 0.3);
+    background-color: hsla(120, 100%, 25%, 0.5);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border: solid black;
     border-radius: 5px;
@@ -131,13 +131,14 @@ a {
     margin:2px;
 }
 .forecast p {
-    color: black;
+    color: floralwhite;
     font-size: 15px;
     display: table-cell;
     padding: 5px;
-    border: cadetblue solid;
-    border-radius: 10px;
-    background-color:white;
+    border: palegoldenrod solid;
+    border-radius: 15px;
+    border-width:5px;
+    background-color:hsla(120, 100%, 25%, 0.7);
 
 }
 
@@ -171,5 +172,20 @@ a {
     .forecast p {
         display: grid;
         justify-items: center;
+    }
+}
+@media only screen and (max-width: 600px) {
+    body {
+        background-repeat:repeat;
+    }
+}
+@media only screen and (min-width: 1900px) {
+    body {
+        background-repeat: repeat;
+    }
+}
+@media only screen and (min-height: 1080px) {
+    body {
+        background-repeat: repeat;
     }
 }
