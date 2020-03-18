@@ -50,8 +50,8 @@ namespace Capstone.Web.Models
                 {"rain", "Pack raingear and wear waterproof shoes." },
                 {"snow", "Pack snowshoes." },
                 {"thunderstorms","Seek shelter. Avoid hiking on exposed ridges." },
-                {"sunny","Pack Sunblock" },
-                {"partly cloudy","Is it partly cloudy, or partly sunny? " },
+                {"clear-day","Pack Sunblock" },
+                {"partly-cloudy-day","Is it partly cloudy, or partly sunny? " },
                 {"cloudy", "Watch out for Vampires, for they walk the land today. " }
             };
 

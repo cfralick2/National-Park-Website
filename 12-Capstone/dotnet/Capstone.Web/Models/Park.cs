@@ -8,6 +8,8 @@ namespace Capstone.Web.Models
 
     public class Park
     {
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
         public string ParkCode { get; set; }
         public string ParkName { get; set; }
         public string State { get; set; }
